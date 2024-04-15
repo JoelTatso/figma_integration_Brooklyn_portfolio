@@ -28,6 +28,11 @@
     --primary-700:#632599;
     --primary-800:#421866;
     --primary-900:#210C33;
+
+    /* elipse color */
+    --elipse-first:#DA4DF1;
+    --elipse-second:#C4F5E9;
+    --elipse-third:#FFEAC6;
 }
 
 *{
@@ -39,14 +44,24 @@
 body{
     font-family:'Work Sans';
     overflow-x: hidden;
+    color: var(--gray-900);
+    position: relative;
 }
 main{
     position: relative;
+    @media (min-width:992px){
+        backdrop-filter: blur(100px);
+    } 
 }
-
+nav{
+    background-color: var(--white);
+}
 /* --------------------------- component config ---------------- */
-.w-60{
-    width: 45%;
+.w-55{
+    width: 55%;
+}
+.w-40{
+    width: 40%;
 }
 a{
     text-decoration: none;
@@ -62,9 +77,24 @@ a{
     transition: background-color .3s ease;
 }
 
-button,button:hover,button:active,button:focus,.btn:hover,.btn:active,.btn:focus{
+input, button,button:hover,button:active,button:focus,.btn:hover,.btn:active,.btn:focus{
     box-shadow: none !important;
 }
+
+input{
+    border: none !important;
+    border-bottom: 1px solid var(--gray-100) !important;
+    border-radius: 0px !important;
+    padding-left:0 !important;
+}
+input:focus,input:active,input:active::placeholder,input:focus::placeholder{
+    border-color: var(--primary-500) !important;
+    color: var(--primary-600) !important;
+    
+        color: var(--primary-600) !important;
+    }
+
+
 .btn:hover{
     background-color:var(--primary-600) !important;
     color: var(--white) !important;
@@ -89,6 +119,13 @@ section{
     padding: 80px 0!important;
 }
 
+.card-section{
+    box-shadow: 0px 0px  100px 30px var(--gray-50);
+    border-radius: 16px;
+    padding: 70px;
+    background-color:var(--white) ;
+    position: relative;
+}
 /* ---------------------- Navbar ------------------ */
 .logo{
     width: 56px;
@@ -101,16 +138,19 @@ section{
 
 /* ----------------------------Home ------------------- */
 #home{
-    padding-top: 100px !important;
-    padding-bottom: 40px !important;
+    padding-top: 180px !important;
+    padding-bottom: 20px!important;
 }
 .name{
     font-weight: 600;
+    font-size: 65px;
+    width: 100%;
     color: var(--gray-900);
 }
 .presentation{
     font-weight: 400;
     font-size: 15px;
+    width: 100%;
     color: var(--gray-600);
 }
 .presentation span{
@@ -118,12 +158,22 @@ section{
     min-height: .3rem;
 }
 
+.profile_1{
+    box-shadow: 0px 0px  60px 5px var(--gray-50);
+    border-radius: 25px;
+    
+}
+.bg{
+    background-color: var(--white);
+    border-radius: 25px;
+}
+
 .home-cards .home-card{
     background-color: var(--primary-100);
     border-radius: 6px;
-    height: 106px;
+    height: 96px;
     width: 300px;
-    margin-top: 6rem !important;
+    margin-top: 4.6rem !important;
     @media (max-width:991px) {
         margin-top: 1.5rem !important;
     }
@@ -141,29 +191,16 @@ section{
     color: var(--gray-500);
 }
 
-.profile_1{
-    min-width:120%  !important;
-    min-height: 120% !important;
-    @media (max-width:991px) {
-        min-width:100%  !important;
-        min-height: 100% !important;
-    }
-}
-
 /* ------------------------About------------------------ */
 #about{
-    padding-top: 0 !important;
-}
-.about{
-    box-shadow: .05px .05px  100px 30px #F0F1F3;
-    border-radius: 16px;
-    padding: 80px;
-    background-color:var(--white) ;
-    position: relative;
+    padding-top:0 !important ;
+    padding-bottom: 0 !important;
+    position:relative;
+    top:120px;
 }
 .socials{
     background-color: var(--white);
-    box-shadow: .05px .05px  50px 5px #F0F1F3;
+    box-shadow: 0 0 50px 5px #F0F1F3;
     border-radius: 4px;
     width: 200px;
     height: 55px;
@@ -182,7 +219,7 @@ section{
         transform: translate(-60px,0px);
         width: 55px;
         height: 200px;
-        box-shadow: .05px .05px  50px 5px #F0F1F3;
+        box-shadow: -10px 0  50px 5px #F0F1F3;
     }   
 }
 .socials a{
@@ -222,6 +259,7 @@ section{
 /* -----------------------------------process---------------------------- */
 #process{
     background-color: var(--gray-100);
+    padding-top: 260px !important;
 }
 
 .process-title{
@@ -347,10 +385,13 @@ section{
     transition: all .3s ease;
 }
 .post-card:hover{
-    box-shadow: 1px 1px 15px 10px var(--gray-100) ;
+    box-shadow: 1px 1px 15px 5px var(--gray-100);
     transform: scale(1.03);
 }
 
+.post-card-img img{
+    border-radius: 8px 8px 0 0;
+}
 .post-card-body{
     padding: 14px;
 }
@@ -361,4 +402,303 @@ section{
 .card-body-post{
     font-size: 18px;
     color: var(--gray-900);
+}
+
+/* ----------------------service---------------------------- */
+#services{
+    background-color: var(--gray-100);
+}
+.service-title{
+    font-size: 48px;
+    font-weight: 600;
+}
+.service-body{
+    color: var(--gray-400);
+}
+
+.service-card{
+    border: 1px solid var(--gray-100);
+    background-color: var(--white);
+    border-radius: 6px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.service-card:hover{
+    border-left:5px solid var(--primary-500);
+    transform: scale(1.02);
+    box-shadow: 1px 1px 30px 1px var(--gray-200);
+}
+
+.service-card-title{
+    font-size: 24px;
+    font-weight: 600;
+}
+.service-card-body{
+    color: var(--gray-700);
+    font-size: 13px;
+}
+
+/* -------------------------client----------------------- */
+#happyclient{
+    padding-bottom: 0 !important;
+}
+.client img{ 
+    width: 15%;
+    height: 15%;
+    margin:auto;
+    @media (min-width:768px) {
+        width: 16%;
+        height: 16%;
+    }
+}
+
+
+/* ------------------------testimonial------------------------ */
+.testimonial-body{
+    color: var(--gray-800);
+    font-weight: 500;
+    font-size: 18px;
+}
+.testimonial-author{
+    font-size: 18px;
+    font-weight:600;
+}
+
+/* ------------------------contact------------------------------ */
+#contact{
+    padding-top:0 !important;
+    padding-bottom: 0 !important;
+    position: relative;
+    top: 60px;
+}
+.contact-title{
+    font-weight: 600;
+}
+.contact-body{
+    color: var(--gray-400);
+}
+
+.contact-location-card{
+    width: 60%;
+    border-radius: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+    transition: all .3s ease;
+    @media (max-width:991.9px) {
+        width: 100%;
+    }
+}
+.contact-location-card:hover{
+    box-shadow: 1px 1px 50px 2px var(--gray-100);
+    transform: scale(1.02);
+    .icon{
+        color: var(--white);
+        background-color: var(--primary-500);
+    }
+}
+
+.contact-location-card .icon{
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary-100);
+    padding: 22px;
+    border-radius: 4px;
+    color: var(--primary-500);
+    transition: all .3s ease;
+}
+
+.address{
+    color: var(--gray-400);
+    font-size: 14px;
+}
+.address-value{
+    font-weight: 500;
+}
+
+.contact-social a{
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    color: var(--primary-500);
+    padding: 15px;
+    background-color:var(--white);
+    transition: all .3s ease;
+}
+.contact-social a:hover{
+    background-color:var(--primary-500);
+    color: var(--white);
+    box-shadow: 1px 1px 50px 3cap var(--gray-100);
+}
+
+/* --------------------footer------------------------- */
+footer{
+    background-color: var(--gray-900);
+    padding: 90px 0;
+
+}
+
+footer a,a:hover{
+    color: var(--white);
+}
+footer a span:nth-child(2){
+    font-size: 32px;
+}
+.footer-nav{
+    @media (max-width:392px) {
+        display: contents !important;
+    }
+}
+.footer-nav a ,.Copyright{
+    font-size: 14px;
+    color: var(--gray-400);
+    transition: all .3s ease;
+}
+
+.footer-nav a:hover{
+    color:var(--gray-200) ;
+}
+
+/* ---------------------------Carousel------------------------------ */
+
+
+.tns-nav {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.tns-nav button,button:active,button:focus{
+    box-shadow: none;
+    border: none;
+}
+.tns-nav button{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--gray-200);
+    transition: all .3s ease;
+}
+.tns-nav button:hover{
+    background-color: var(--gray-900);
+}
+.tns-nav-active{
+    background-color: var(--gray-900) !important;
+}
+
+#tns1-ow,#post-ow{
+    position: relative;
+}
+#tns1-ow > .tns-controls button{
+    display: none;
+}
+#post-ow > .tns-nav{
+    position: absolute;
+    top: 100%;
+    left: 48.4%;
+    @media (max-width:992px){
+        left: 45.5%;
+    }
+
+}
+#post-ow > .tns-nav{
+    @media(max-width:768px) {
+        left: 36%;
+    }
+}
+
+#tns1-ow > .tns-nav{
+    margin: auto;
+    position: absolute;
+    top: 100%;
+    left:46%;
+    @media (max-width:992px) {
+        left:44%;
+    }
+}
+
+#tns1-ow > .tns-nav{
+    @media (max-width:768px) {
+        left: 40%;
+    }
+}
+
+/* ------------------------ background ------------------------ */
+.elipse:nth-child(4){
+    @media (min-width:992px){
+        background: var(--elipse-first);
+        border-radius: 50%;
+        position: absolute;
+        opacity: .3;
+        width: 871.21px;
+        height: 871.21px;
+        z-index: -2;
+        left:55%;
+        top:-9.5%;
+    }
+}
+.elipse:nth-child(2){
+    @media (min-width:992px){
+        background: var(--elipse-second);
+        border-radius: 50%;
+        position: absolute;
+        opacity: .4;
+        width: 871.21px;
+        height: 871.21px;
+        z-index: -2;
+        left: 78%;
+        top:3%;
+    }
+}
+.elipse:nth-child(3){
+    @media (min-width:992px){
+        background: var(--elipse-third);
+        border-radius: 50%;
+        position: absolute;
+        opacity: .6;
+        width: 871.21px;
+        height: 871.21px;
+        z-index: -2;
+        left: -20%;
+        top:14%;
+    }
+}.elipse:nth-child(5){
+    @media (min-width:992px){
+        background: var(--elipse-first);
+        border-radius: 50%;
+        position: absolute;
+        opacity: .3;
+        width: 871.21px;
+        height: 871.21px;
+        z-index: -2;
+        left:-60%;
+        top:50%;
+    }
+}
+.elipse:nth-child(6){
+    @media (min-width:992px){
+        background: var(--elipse-second);
+        border-radius: 50%;
+        position: absolute;
+        opacity: .4;
+        width: 871.21px;
+        height: 871.21px;
+        z-index: -2;
+        left: 80%;
+        top:51%;
+    }
+}
+.elipse:nth-child(7){
+    @media (min-width:992px){
+        background: var(--elipse-third);
+        border-radius: 50%;
+        position: absolute;
+        opacity: .23;
+        width: 1000px;
+        height: 1000px;
+        z-index: -2;
+        left: 10.5%;
+        top:80%;
+    }
 }
