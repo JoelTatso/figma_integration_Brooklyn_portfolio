@@ -48,7 +48,6 @@ body{
     position: relative;
 }
 main{
-    position: relative;
     @media (min-width:992px){
         backdrop-filter: blur(100px);
     } 
@@ -171,7 +170,7 @@ section{
 .home-cards .home-card{
     background-color: var(--primary-100);
     border-radius: 6px;
-    height: 96px;
+    height: 110px;
     width: 300px;
     margin-top: 4.6rem !important;
     @media (max-width:991px) {
@@ -528,7 +527,7 @@ section{
 .contact-social a:hover{
     background-color:var(--primary-500);
     color: var(--white);
-    box-shadow: 1px 1px 50px 3cap var(--gray-100);
+    box-shadow: 1px 1px 50px 3px var(--gray-100);
 }
 
 /* --------------------footer------------------------- */
@@ -612,15 +611,15 @@ footer a span:nth-child(2){
     margin: auto;
     position: absolute;
     top: 100%;
-    left:46%;
+    left:46.7%;
     @media (max-width:992px) {
-        left:44%;
+        left:45%;
     }
 }
 
 #tns1-ow > .tns-nav{
     @media (max-width:768px) {
-        left: 40%;
+        left: 40.7%;
     }
 }
 
